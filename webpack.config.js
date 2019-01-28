@@ -1,5 +1,6 @@
 let path = require( 'path' );
 let HtmlWebpackPlugin = require( 'html-webpack-plugin' );
+let CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 
 module.exports = {
   entry: {
@@ -24,6 +25,13 @@ module.exports = {
         use: {
           loader: 'html-loader'
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       }
     ]
   },
@@ -31,6 +39,9 @@ module.exports = {
     new HtmlWebpackPlugin( {
       inject: false,
       template: 'src/index.html'
-    } )
+    } ),
+    new CopyWebpackPlugin( [
+      { from: 'src/style.css', to: '' }
+    ] )
   ]
 };
