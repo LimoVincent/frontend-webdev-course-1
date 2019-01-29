@@ -1,5 +1,4 @@
 let path = require( 'path' );
-let HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 let CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 
 module.exports = {
@@ -19,29 +18,13 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
-      },
-      {
-        test: /\.html$/,
-        use: {
-          loader: 'html-loader'
-        }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
       }
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin( {
-      inject: false,
-      template: 'src/index.html'
-    } ),
     new CopyWebpackPlugin( [
-      { from: 'src/style.css', to: '' }
+      { from: 'src/**/*.css', to: '' },
+      { from: 'src/**/*.html', to: '' }
     ] )
   ]
 };
