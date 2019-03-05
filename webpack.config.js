@@ -23,8 +23,16 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin( [
-      { from: 'src/**/*.css', to: '' },
-      { from: 'src/**/*.html', to: '' }
+      {
+        from: 'src/**/*.css', 
+        to: '', 
+        transformPath: ( targetPath, absolutePath ) => { return targetPath.replace( 'src/', '' ); } 
+      },
+      {
+        from: 'src/**/*.html', 
+        to: '', 
+        transformPath: ( targetPath, absolutePath ) => { return targetPath.replace( 'src/', '' ); } 
+      }
     ] )
   ]
 };
