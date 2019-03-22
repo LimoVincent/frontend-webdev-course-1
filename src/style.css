@@ -1,0 +1,103 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Georgia, serif;
+	width: 100%;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	padding: 20px 0;
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+}
+
+.controls > .field {
+	display: flex;
+	margin: 10px 20px;
+}
+
+.controls > .field > .field-label, 
+#currency-indicator {
+	background-color: #e89631;
+	color: white;
+	padding: 5px 10px;
+}
+
+.controls > .field > .field-label {
+	border-radius: 3px 0 0 3px;
+}
+
+.controls > .field > .field-input {
+	border: medium solid #e89631;
+	border-width: 1px;
+}
+
+.controls input {
+	font-family: Georgia, serif;
+	font-size: 15px;
+	border: none;
+	outline: none;
+	height: 100%;
+	padding: 0 5px;
+}
+
+.controls select {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	height: 100%;
+}
+
+.controls input[type=submit] {
+	background-color: #e89631;
+	color: white;
+	padding: 0 20px;
+	border-radius: 3px;
+}
+
+.controls input[type=submit]:hover {
+	background-color: #a0a0a0;
+	cursor: pointer;
+}
+
+#currency-indicator {
+	border-radius: 0 3px 3px 0;
+}
+
+#isLoading {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#currency-list {
+	list-style-type: none;
+	margin: 50px;
+}
+
+#currency-list > li {
+	padding: 5px 10px;
+	overflow: hidden;
+}
+
+#currency-list > li > div:first-child {
+	float: left;
+}
+
+#currency-list > li > div:last-child {
+	float: right;
+}
+
+#currency-list > li:nth-child(odd) {
+	background-color: #e0e0e0;
+}
